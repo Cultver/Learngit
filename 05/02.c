@@ -16,7 +16,7 @@ void get_args(int ac,char **av){
 }
 
 void scoot_over(int jj){
-    for(int k = num_y-1;k>jj;k++)
+    for(int k = num_y-1;k>jj;k--)
         y[k] = y[k-1];
 }
 
@@ -32,6 +32,7 @@ void insert(int new_y){
             return;
         }
     }
+    y[num_y+1]=new_y;
 }
 void process_data(){
     for (num_y = 0; num_y < num_inputs;num_y++) {
@@ -48,5 +49,6 @@ int main(int argc,char ** argv){
     get_args(argc,argv);
     process_data();
     print_results();
+    printf("ts");
     return 0;
 }
